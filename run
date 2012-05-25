@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Install Play! 2 and run the app
+#
+#
+# This will create a directory 'play' which will contain the Play! 2.
+# If you delete the directory it'll be re-created next time this script runs.
+#
+
+
+installPlay()
+{
+	if [ ! -e 'play' ] ; then
+		mkdir play
+		curl 'http://download.playframework.org/releases/play-2.0.1.zip' | tar -x -C play --strip-components 1
+		./play/play clean-all
+	fi
+}
+
+runApp()
+{
+	./play/play run
+}
+
+
+
+installPlay
+runApp

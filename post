@@ -1,0 +1,4 @@
+#!/bin/sh
+
+curl http://localhost:9000/foo -i -X POST
+echo
